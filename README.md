@@ -11,7 +11,7 @@ Exercício para obtenção de certificado de Introdução a Back-end Development
     - [x] O aluno pode cadastrar no mínimo 3 matérias.
     - [x] O cadastro de matérias continua até que o usuário decida parar.
 3. Cadastro de Notas:
-    - [ ] Para cada matéria cadastrada, solicitar 3 notas.
+    - [x] Para cada matéria cadastrada, solicitar 3 notas.
 4. Cálculo de Média:
     - [ ] Calcular a média individual de cada matéria.
 5. Cadastro e Contabilização de Faltas:

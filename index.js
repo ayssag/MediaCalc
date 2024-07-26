@@ -63,6 +63,21 @@ function get_grades(subject){
     return grades;
 }
 
+function mean_grade(grades){
+    let mean = 0;
+    grades.forEach((grade) => {
+        mean += grade;
+    });
+    mean /= 3;
+
+    return mean.toFixed(2);
+}
+
+function mean(subjects){
+    subjects.forEach((subject) => {
+        subject['mean'] = mean_grade(subject.grades);
+    });
+}
 
 const name = user_input("Digite o nome do aluno: ");
 console.log(`Boletim de ${name}`);
@@ -79,4 +94,5 @@ subject_list.forEach((subject) => {
     });
 });
 
-console.log(subject_info);
+console.log(`Médias de ${name}: `)
+mean(subject_info);
