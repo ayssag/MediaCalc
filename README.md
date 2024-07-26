@@ -13,7 +13,7 @@ Exercício para obtenção de certificado de Introdução a Back-end Development
 3. Cadastro de Notas:
     - [x] Para cada matéria cadastrada, solicitar 3 notas.
 4. Cálculo de Média:
-    - [ ] Calcular a média individual de cada matéria.
+    - [X] Calcular a média individual de cada matéria.
 5. Cadastro e Contabilização de Faltas:
     - [ ] Solicitar o número de faltas para cada matéria.
     - [ ] Verificar se o aluno está reprovado por faltas (mais de 5 faltas em qualquer
