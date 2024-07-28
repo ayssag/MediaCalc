@@ -23,3 +23,12 @@ matéria).
     - [x] Indicar se o aluno está aprovado ou reprovado em cada matéria, considerando
 tanto a média das notas quanto as faltas.
 
+## Execução
+### Dependências
+`
+    npm install
+`
+### Programa
+`
+    node index.js
+`
