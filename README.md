@@ -15,11 +15,11 @@ Exercício para obtenção de certificado de Introdução a Back-end Development
 4. Cálculo de Média:
     - [X] Calcular a média individual de cada matéria.
 5. Cadastro e Contabilização de Faltas:
-    - [ ] Solicitar o número de faltas para cada matéria.
-    - [ ] Verificar se o aluno está reprovado por faltas (mais de 5 faltas em qualquer
+    - [x] Solicitar o número de faltas para cada matéria.
+    - [x] Verificar se o aluno está reprovado por faltas (mais de 5 faltas em qualquer
 matéria).
 6. Resultados:
-    - [ ] Exibir a média de cada matéria.
-    - [ ] Indicar se o aluno está aprovado ou reprovado em cada matéria, considerando
+    - [x] Exibir a média de cada matéria.
+    - [x] Indicar se o aluno está aprovado ou reprovado em cada matéria, considerando
 tanto a média das notas quanto as faltas.
 
