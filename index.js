@@ -1,5 +1,4 @@
-const user_input = require("prompt-sync")({sigint: true});
-
+// Funções
 function add_subject_validation(answer){
     if (answer == 's' || answer == 'S'){
         return 'true';
@@ -99,22 +98,6 @@ function get_missing_classes(subjects){
 
 }
 
-const name = user_input(">>> Digite o nome do aluno: ");
-
-const subject_list = get_subjects();
-console.log(`========================================
-Matérias = ${subject_list}
-========================================`);
-
-var subject_info = [];
-
-subject_list.forEach((subject) => {
-    subject_info.push({
-        subject: subject,
-        grades: get_grades(subject)
-    });
-});
-
 function check_aprovation(subjects){
     let approved;
 
@@ -131,26 +114,55 @@ function check_aprovation(subjects){
     return subjects;
 }
 
-mean(subject_info);
+function report(name){
+    // Matérias
+    var subject_info = [];
+    const subject_list = get_subjects();
 
-subject_info = get_missing_classes(subject_info);
+    console.log(`========================================
+Matérias = ${subject_list}
+========================================`);
+    
+    // Calcula notas
+    subject_list.forEach((subject) => {
+        subject_info.push({
+            subject: subject,
+            grades: get_grades(subject)
+        });
+    });
 
-subject_info = check_aprovation(subject_info);
+    // Calcula média
+    mean(subject_info);
 
-var boletim = `
-    \t========================================
+    // Computa faltas
+    subject_info = get_missing_classes(subject_info);
+
+    // Verifica aprovação
+    subject_info = check_aprovation(subject_info);
+
+    // Cria boletim
+    let boletim = `
     \t\tBoletim ${name}
     \t========================================`;
 
-subject_info.forEach((subject) => {
-    boletim += `\n\tMédia ${subject.subject}: ${subject.mean}\t| Faltas: ${subject.missing_classes}`;
-    if (subject.approved){
-        boletim += `\n\tAprovado(a)`;
-    }
-    else{
-        boletim += `\n\tRecuperação`;
-    }
-    boletim += `\n\t========================================`;
-});
+    subject_info.forEach((subject) => {
+        boletim += `\n\tMédia ${subject.subject}: ${subject.mean}\t| Faltas: ${subject.missing_classes}`;
+        if (subject.approved){
+            boletim += `\n\tAprovado(a)`;
+        }
+        else{
+            boletim += `\n\tRecuperação`;
+        }
+        boletim += `\n\t========================================`;
+    });
+
+    return boletim;
+
+}
+
+// Algoritmo principal
+const user_input = require("prompt-sync")({sigint: true});
+const name = user_input(">>> Digite o nome do aluno: ");
+const boletim = report(name);
 
 console.log(boletim);
